@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  gigaconsulting.services.api:
+    build:
+      context: .
+      dockerfile: src/1 - Services/GigaConsulting.Services.API/Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=db;Database=GigaConsultingDB;Username=root;Password=a12345z;
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  db:
+    image: mysql:8
+    environment:
+      - MYSQL_ROOT_PASSWORD=a12345z
+      - MYSQL_DATABASE=GigaConsultingDB
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql-data:

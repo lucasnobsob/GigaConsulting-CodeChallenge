@@ -1,0 +1,6 @@
+services:
+  gigaconsulting.services.api:
+    image: ${DOCKER_REGISTRY-}gigaconsultingservicesapi
+    build:
+      context: .
+      dockerfile: src/1 - Services/GigaConsulting.Services.API/Dockerfile
