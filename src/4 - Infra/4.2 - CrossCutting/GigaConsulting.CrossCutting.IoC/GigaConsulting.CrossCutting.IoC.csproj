@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="9.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\2 - Application\GigaConsulting.Application\GigaConsulting.Application.csproj" />
+    <ProjectReference Include="..\..\..\3 - Domain\GigaConsulting.Domain\GigaConsulting.Domain.csproj" />
+    <ProjectReference Include="..\..\4.1 - Data\GigaConsulting.Infra.Data\GigaConsulting.Infra.Data.csproj" />
+    <ProjectReference Include="..\GigaConsulting.CrossCutting.Bus\GigaConsulting.CrossCutting.Bus.csproj" />
+    <ProjectReference Include="..\GigaConsulting.CrossCutting.Identity\GigaConsulting.CrossCutting.Identity.csproj" />
+  </ItemGroup>
+
+</Project>
