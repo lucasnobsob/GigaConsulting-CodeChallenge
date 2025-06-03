@@ -31,7 +31,7 @@ namespace GigaConsulting.Services.API.Controllers
         {
             var transaction = await _roomAppService.GetAll();
 
-            return Response(transaction);
+            return Response(transaction.OrderBy(x => x.Name));
         }
     }
 }

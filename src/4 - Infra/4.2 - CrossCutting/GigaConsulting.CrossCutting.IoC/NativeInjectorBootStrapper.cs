@@ -41,6 +41,7 @@ namespace GigaConsulting.Infra.CrossCutting.IoC
             // Application
             services.AddScoped<IChairAppService, ChairAppService>();
             services.AddScoped<IAllocationAppService, AllocationAppService>();
+            services.AddScoped<IRoomAppService, RoomAppService>();
 
             // Domain - Events
             services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();

@@ -32,9 +32,9 @@ namespace GigaConsulting.Services.API.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetAll()
         {
-            var transaction = await _chairAppService.GetAll();
+            var chair = await _chairAppService.GetAll();
 
-            return Response(transaction);
+            return Response(chair.OrderBy(x => x.Status));
         }
 
         [HttpPost]
@@ -57,7 +57,7 @@ namespace GigaConsulting.Services.API.Controllers
             return Created();
         }
 
-        [HttpPost]
+        [HttpPut]
         [Authorize(Policy = "CanUpdateChairData", Roles = Roles.Admin)]
         [ProducesResponseType(typeof(UpdateChairViewModel), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
@@ -98,8 +98,8 @@ namespace GigaConsulting.Services.API.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> History(Guid id)
         {
-            var walletHistoryData = await _chairAppService.GetAllHistory(id);
-            return Response(walletHistoryData);
+            var chairHistoryData = await _chairAppService.GetAllHistory(id);
+            return Response(chairHistoryData);
         }
     }
 }
