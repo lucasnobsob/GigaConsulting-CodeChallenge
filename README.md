@@ -1,16 +1,16 @@
 # GigaConsulting-CodeChallenge
 
 ## Stack Técnica
-- .NET 8.0
+- .NET 9.0
 - .NET WebApi
 - .NET Identity
-- Entity Framework 8.0
+- Entity Framework 9.0
 - .NET Core Native DI
 - AutoMapper
 - FluentValidator
 - MediatR
 - Swagger UI
-- PostgresSQL
+- MySQL
 - xUnit
 - Moq
 - Fluent Assertions
