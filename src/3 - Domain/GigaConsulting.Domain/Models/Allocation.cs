@@ -6,7 +6,10 @@ namespace GigaConsulting.Domain.Models
     {
         public DateTime From { get; set; }
         public DateTime To { get; set; }
-        public Room Room { get; set; } = new Room();
-        public Chair Chair { get; set; } = new Chair();
+
+        public Guid RoomId { get; set; }
+        public Guid ChairId { get; set; }
+        public Room Room { get; set; }
+        public Chair Chair { get; set; }
     }
 }

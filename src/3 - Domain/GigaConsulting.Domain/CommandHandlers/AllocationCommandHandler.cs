@@ -58,8 +58,8 @@ namespace GigaConsulting.Domain.CommandHandlers
             {
                 From = message.From,
                 To = message.To,
-                Room = room,
-                Chair = chair
+                RoomId = room.Id,
+                ChairId = chair.Id
             };
             await _allocationRepository.Add(allocation);
 

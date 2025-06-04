@@ -30,7 +30,7 @@ namespace GigaConsulting.Application.Services
 
         public async Task<IEnumerable<AllocationViewModel>> GetAll()
         {
-            var chairs = await _allocationRepository.GetAll();
+            var chairs = await _allocationRepository.GetAllocationsAsync();
             return _mapper.Map<List<AllocationViewModel>>(chairs);
         }
 
